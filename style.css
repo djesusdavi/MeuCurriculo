@@ -1,23 +1,207 @@
-body{
-    background-color: rgb(56, 56, 56);
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
+*{
     padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-header {
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url(imagens/background.jpg);
+    margin-top: 100px;
+    line-height: 1.6;
+    color: #333;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+
+header{
+    animation: abrirHeader 1s ease-out forwards;
+    width: 0;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: fixed;
+    padding: 10px;
     display: flex;
     align-items: center;
-    height: 80px;       
-    padding: 0 20px;
-    background-color: cadetblue;
-    position:fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
+    background: linear-gradient(to bottom, #5f9ea0, #20b2aa, #87cefa);
+
 }
-header img {
-    height: 200%;        
-    width: auto;
-    margin-left: -30px;
+.cabecalho{
+    display: flex;
+    align-items: center;
+    
+}
+header h1{
+    margin: 0
+}
+
+header img{
+    height: 70px;
+    width: 70px;
+    margin-right: 15px;
+    
+}
+
+a{
+    color: black;
+    margin-right: 50px;
+}
+
+.topicos{
+    display: flex;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+.cabecalho, .topicos {
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: aparecer 0.5s ease-out forwards;
+}
+
+.cabecalho {
+    animation-delay: 0.5s;
+}
+
+.topicos {
+    animation-delay: 1.2s;
+}
+
+
+
+@keyframes abrirHeader {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes aparecer {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.saudacoes{
+    text-align: center;
+    justify-content: center;
+    padding: 0 50px;
+    margin-top: 100px;
+}
+
+.quadrado{
+    background-color: cadetblue;
+    padding: 40px;
+    border-radius: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 4px 10px;
+    text-align: center;
+    
+}
+
+.botao{
+    display: block;
+    width: fit-content;
+    margin: 20px auto 0;
+    padding: 12px 30px;
+    margin-top: 20px;
+    background-color: #87cefa;
+    color: black;
+    text-decoration: none;
+    border-radius: 8px;
+}
+.botao:hover {
+    background-color: #5989a7;
+}
+.sobre-mim{
+     background-color: cadetblue;
+    padding: 40px;
+    border-radius: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 4px 10px;
+    text-align: center;
+    margin-top: 250px;
+
+}
+p{
+    margin-top: 20px;
+}
+
+#inicio {
+    padding-top: 120px;
+}
+
+#sobre-mim{
+    padding-top: 5px;
+}
+
+.boxformacoes{
+      background-color: cadetblue;
+    padding: 40px;
+    border-radius: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 4px 10px;
+    text-align: center;
+    margin-top: 250px;
+}
+
+#formacoes{
+    padding-top: 5px;
+}
+
+.habilidadesbox{
+    background-color: cadetblue;
+    padding: 40px;
+    border-radius: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 4px 10px;
+    text-align: center;
+    margin-top: 250px;
+    justify-content: center;
+
+}
+#habilidades{
+    padding-top: 5px;
+}
+
+.contatosbox{
+    background-color: cadetblue;
+    padding: 40px;
+    border-radius: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 4px 10px;
+    text-align: center;
+    margin-top: 250px;
+    justify-content: center;
+}
+
+.meios {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+#contatos{
+    padding-top: 5px;
+}
+
+footer{
+    padding: 50px;
+    background-color: #87cefabf;
+    text-align: center;
+    margin-top: 50px;
+    box-shadow: inset 0 10px 20px
 }
