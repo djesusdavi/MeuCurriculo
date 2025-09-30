@@ -1,9 +1,11 @@
+/* Reset básico de margens e preenchimentos */
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
+/* Configurações gerais do body */
 body{
     font-family: Arial, Helvetica, sans-serif;
     background-image: url(imagens/background.jpg);
@@ -13,9 +15,9 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-
 }
 
+/* Estilo do cabeçalho */
 header{
     animation: abrirHeader 1s ease-out forwards;
     width: 0;
@@ -27,53 +29,60 @@ header{
     display: flex;
     align-items: center;
     background: linear-gradient(to bottom, #5f9ea0, #20b2aa, #87cefa);
-
 }
+
+/* Container da logo + nome */
 .cabecalho{
     display: flex;
     align-items: center;
-    
 }
+
+/* Ajuste do nome no header */
 header h1{
     margin: 0
 }
 
+/* Tamanho da logo */
 header img{
     height: 70px;
     width: 70px;
     margin-right: 15px;
-    
 }
 
+/* Links do menu */
 a{
     color: black;
     margin-right: 50px;
+    text-decoration: none;
 }
 
+/* Container dos links */
 .topicos{
     display: flex;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-
+    text-align: center;
 }
 
+/* Animação inicial do cabeçalho */
 .cabecalho, .topicos {
     opacity: 0;
     transform: translateY(-20px);
     animation: aparecer 0.5s ease-out forwards;
 }
 
+/* Delay da animação no logo + nome */
 .cabecalho {
     animation-delay: 0.5s;
 }
 
+/* Delay da animação no menu */
 .topicos {
     animation-delay: 1.2s;
 }
 
-
-
+/* Animação de abrir largura do header */
 @keyframes abrirHeader {
     from {
         width: 0;
@@ -83,6 +92,7 @@ a{
     }
 }
 
+/* Animação de fade + deslocamento */
 @keyframes aparecer {
     to {
         opacity: 1;
@@ -90,6 +100,7 @@ a{
     }
 }
 
+/* Seção inicial */
 .saudacoes{
     text-align: center;
     justify-content: center;
@@ -97,6 +108,7 @@ a{
     margin-top: 100px;
 }
 
+/* Caixa centralizada */
 .quadrado{
     background-color: cadetblue;
     padding: 40px;
@@ -105,25 +117,32 @@ a{
     margin: 0 auto;
     box-shadow: 0 4px 10px;
     text-align: center;
-    
 }
 
+/* Botão de navegação */
 .botao{
     display: block;
     width: fit-content;
     margin: 20px auto 0;
     padding: 12px 30px;
     margin-top: 20px;
-    background-color: #87cefa;
-    color: black;
+    background: linear-gradient(to bottom, #87cefa, #5f9ea0);
+    color: rgb(0, 0, 0);
     text-decoration: none;
-    border-radius: 8px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    border: none;
 }
+
+/* Efeito hover no botão */
 .botao:hover {
-    background-color: #5989a7;
+    background: linear-gradient(to bottom, #5f9ea0, #87cefa);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
 }
+
+/* Seção sobre mim */
 .sobre-mim{
-     background-color: cadetblue;
+    background-color: cadetblue;
     padding: 40px;
     border-radius: 15px;
     max-width: 600px;
@@ -131,12 +150,14 @@ a{
     box-shadow: 0 4px 10px;
     text-align: center;
     margin-top: 250px;
-
 }
+
+/* Espaço entre parágrafos */
 p{
     margin-top: 20px;
 }
 
+/* Ajustes das seções com id */
 #inicio {
     padding-top: 120px;
 }
@@ -145,8 +166,9 @@ p{
     padding-top: 5px;
 }
 
+/* Box das formações */
 .boxformacoes{
-      background-color: cadetblue;
+    background-color: cadetblue;
     padding: 40px;
     border-radius: 15px;
     max-width: 600px;
@@ -160,6 +182,7 @@ p{
     padding-top: 5px;
 }
 
+/* Box das habilidades */
 .habilidadesbox{
     background-color: cadetblue;
     padding: 40px;
@@ -170,12 +193,13 @@ p{
     text-align: center;
     margin-top: 250px;
     justify-content: center;
-
 }
+
 #habilidades{
     padding-top: 5px;
 }
 
+/* Box de contatos */
 .contatosbox{
     background-color: cadetblue;
     padding: 40px;
@@ -188,6 +212,7 @@ p{
     justify-content: center;
 }
 
+/* Alinhamento dos meios de contato */
 .meios {
     display: flex;
     justify-content: center;
@@ -198,24 +223,25 @@ p{
     padding-top: 5px;
 }
 
+/* Rodapé */
 footer{
     padding: 50px;
     background-color: #87cefabf;
     text-align: center;
     margin-top: 50px;
-    box-shadow: inset 0 10px 20px
+    box-shadow: inset 0 10px 20px;
 }
 
-
-
-
+/* ========================= */
+/* Responsividade até 768px */
+/* ========================= */
 @media (max-width: 768px) {
   body {
     margin-top: 70px;
     font-size: 16px;
   }
 
-  
+  /* Header se ajusta para coluna */
   header {
     left: 0 !important;
     transform: none !important;
@@ -243,7 +269,7 @@ footer{
     text-align: center;
   }
 
-  
+  /* Menu fica embaixo */
   .topicos {
     position: static !important;
     transform: none !important;
@@ -252,13 +278,14 @@ footer{
     justify-content: center;
     gap: 8px;
   }
+
   .topicos a {
     margin: 4px 8px;
     font-size: 14px;
     display: inline-block;
   }
 
-  
+  /* Ajustes nas caixas principais */
   .saudacoes, .sobre-mim, .boxformacoes, .habilidadesbox, .contatosbox {
     max-width: 92%;
     margin-top: 40px;
@@ -287,7 +314,7 @@ footer{
     font-size: 16px;
   }
 
-  
+  /* Contatos empilhados */
   .meios {
     flex-direction: column;
     gap: 10px;
@@ -304,7 +331,9 @@ footer{
   }
 }
 
-
+/* ========================= */
+/* Responsividade até 420px */
+/* ========================= */
 @media (max-width: 420px) {
   body {
     margin-top: 60px;
@@ -338,10 +367,3 @@ footer{
     font-size: 14px;
   }
 }
-
-
-
-
-
-
-
